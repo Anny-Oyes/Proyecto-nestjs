@@ -24,8 +24,6 @@ export class Book {
   @Column({ type: 'varchar', nullable: true })
   filename: string
 
-
-
   @OneToMany(() => BookImage, (bookImage) => bookImage.book, {
     cascade: true,
     eager: true,

@@ -1,20 +1,20 @@
 import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    Param,
-    ParseUUIDPipe,
-    Patch,
-    Post,
-  } from '@nestjs/common';
-  import { CreateBookDto } from './dto/book.dto';
-  import { BookService } from './book.service';
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseUUIDPipe,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { CreateBookDto } from './dto/book.dto';
+import { BookService } from './book.service';
 @Controller('books')
 export class BooksController {
-    constructor(private readonly bookServiceRepository: BookService) {}
+  constructor(private readonly bookServiceRepository: BookService) { }
 
-  @Post()
+  @Post('books')
   create(@Body() bookDto: CreateBookDto) {
     return this.bookServiceRepository.create(bookDto);
   }
