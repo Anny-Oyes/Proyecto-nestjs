@@ -14,7 +14,7 @@ import { BookService } from './book.service';
 export class BooksController {
   constructor(private readonly bookServiceRepository: BookService) { }
 
-  @Post('books')
+  @Post()
   create(@Body() bookDto: CreateBookDto) {
     return this.bookServiceRepository.create(bookDto);
   }
